@@ -1,0 +1,66 @@
+<h4>Select team member</h4>
+<div>
+    <h2>nenenenen</h2>
+    <mat-table [dataSource]="this.dataSource" class="tb-user">
+        <ng-container matColumnDef="name">
+            <mat-cell mat-cell class="cell" *matCellDef="let member">
+                <!-- <img width="60" src="http://dev.timesheet.nccsoft.vn{{user.avatarPath}}" alt=""> -->
+                <button mat-icon-button (click)="deleteMember(member)">
+                    <mat-icon>close</mat-icon>
+                </button>
+                <span class="user-name">{{member.name}}</span>
+                <span class="user-branch" *ngIf="member.branch!=null">{{this.branchs[member.branch].label}}</span>
+                <span class="user-type" *ngIf="member.type!=null">{{this.types[member.type].label}}</span>
+                <span class="user-level" *ngIf="member.level!=null">{{this.levels[member.level].label}}</span>
+            </mat-cell>
+        </ng-container>
+        <mat-row matRipple *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+<div class="filter-list" fxLayout="row">
+    <mat-form-field appearance="outline" class="filter" fxFlex="20">
+        <mat-label>Branch</mat-label>
+        <!-- <mat-select [(ngModel)]="this.selected" #item (ngModelChange)="filterUser(this.selected)"> -->
+        <mat-select [(ngModel)]="this.branch" #item (ngModelChange)="filterUser()">
+            <mat-option *ngFor="let option of this.branchs" [value]="option.value">{{option.label}}</mat-option>
+        </mat-select>
+
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="filter" fxFlex="20">
+        <mat-label>Type</mat-label>
+        <!-- <mat-select [(ngModel)]="this.selected" #item (ngModelChange)="onclick(this.selected)"> -->
+        <mat-select [(ngModel)]="this.type" #item (ngModelChange)="filterUser()">
+            <mat-option *ngFor="let option of this.types" [value]="option.value">{{option.label}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="filter" fxFlex="20">
+        <mat-label>Level</mat-label>
+        <!-- <mat-select [(ngModel)]="this.selected" #item (ngModelChange)="onclick(this.selected)"> -->
+        <mat-select [(ngModel)]="this.level" #item (ngModelChange)="filterUser()">
+            <mat-option *ngFor="let option of this.levels" [value]="option.value">{{option.label}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="search" fxFlex="40">
+        <mat-icon>search</mat-icon>
+        <input matInput type="search">
+        <mat-label>Search by client or project name</mat-label>
+    </mat-form-field>
+</div>
+<mat-table [dataSource]="this.users" class="tb-user">
+    <ng-container matColumnDef="name">
+        <mat-cell mat-cell class="cell" *matCellDef="let user">
+            <div>
+                <button mat-icon-button (click)="addMember(user)">
+                    <mat-icon>add_circle_outline</mat-icon>
+                </button>
+                <!-- <img width="60" src="http://dev.timesheet.nccsoft.vn{{user.avatarPath}}" alt=""> -->
+                <span class="user-name">{{user.name}}</span>
+                <span class="user-branch">{{this.branchs[user.branch].label}}</span>
+                <span class="user-type" *ngIf="user.type!=null">{{this.types[user.type].label}}</span>
+                <span class="user-level" *ngIf="user.level!=null">{{this.levels[user.level].label}}</span>
+            </div>
+
+        </mat-cell>
+    </ng-container>
+    <mat-row matRipple *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

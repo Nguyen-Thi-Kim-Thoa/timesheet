@@ -1,0 +1,42 @@
+@import '~@angular/material/theming';
+@import "../../../app.component.scss";
+
+.add-form{
+    @include flex(flex, column, center,center );
+    border: none ;
+    width: 100%;
+    .section{
+        align-items: center;
+        width: 80%;
+        margin-top: 1%;
+        input{
+            margin: 0px;
+            font-size: 14px;
+            width: 100%;
+        }
+        .prj-name{
+            min-width: 80%;
+        }
+        .prj-note{
+            min-width: 100%;
+        }
+        .mat-form-field{
+            margin-right:2%;
+        }
+        
+        
+        .mat-raised-button{
+            padding: 5px 15px;
+        }
+
+        .picker-form-field{
+            margin-right: 20px;
+        }
+
+        .alert{
+            color: red;
+        }
+    }
+}      
+
+

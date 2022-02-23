@@ -1,0 +1,7 @@
+$bg:#333333;
+@mixin flex($display, $direction, $align-items, $content) {
+    display: $display;
+    flex-direction: $direction;
+    align-items: $align-items;
+    justify-content: $content;
+}

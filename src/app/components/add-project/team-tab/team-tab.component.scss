@@ -1,0 +1,60 @@
+.filter-list{
+    .filter{
+        padding-right:20px;
+    }
+    .search{
+        max-width: none;
+        min-width: 400px;
+     .material-icons{
+         font-size: 20px;
+     }
+     .mat-form-field-label{
+         margin-bottom: 0px;
+     }
+     input{
+         margin-left: 5%;
+         width: 80%;
+     }
+    }
+}
+ .tb-user{
+     
+     
+         .user-branch{
+             border:none;
+             background-color: rgb(9, 168, 3);
+             font-size: 12px;
+             color: #ffff;
+             border-radius: 10px;
+             padding: 2px 4px;
+             font-weight: 500;
+             margin-right: 5px;
+         }
+         .user-type{
+             border:none;
+             background-color: rgb(168, 50, 3);
+             font-size: 12px;
+             color: #ffff;
+             border-radius: 15px;
+             padding: 2px 4px;
+             font-weight: 500;
+             margin-right: 5px;
+         }
+         .user-level{
+             border:none;
+             background-color: rgb(168, 77, 3);
+             font-size: 12px;
+             color: #ffff;
+             border-radius: 15px;
+             padding: 2px 4px;
+             font-weight: 500;
+             margin-right: 5px;
+         }
+     
+     
+ 
+ 
+}
+
+
+

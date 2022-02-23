@@ -1,0 +1,31 @@
+@import '../general-tab.component';
+
+h2{
+    text-align: center;
+}
+.add-form{
+    @include flex(flex, column, center,center );
+    border: none ;
+    width: 100%;
+    
+    .section{
+        align-items: center;
+        width: 100%;
+        margin-top: 1%;
+        input{
+            margin: 0px;
+            font-size: 14px;
+            width: 100%;
+        }
+        
+        .mat-raised-button{
+            padding: 5px 15px;
+        }
+
+        .alert{
+            color: red;
+            font-size: 10px;
+        }
+
+    }
+}      

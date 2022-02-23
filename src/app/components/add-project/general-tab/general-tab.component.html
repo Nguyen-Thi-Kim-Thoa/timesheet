@@ -1,0 +1,110 @@
+<form class="add-form">
+    <div class="section" fxLayout="row">
+        <label for="" fxFlex="20">Customer Name*</label>
+        <div class="add-input" fxFlex="40">
+            <mat-form-field appearance="outline">
+                <mat-label>Choose a client</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let customer of this.customers" [value]="customer.name" selected>
+                        {{customer.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button fxFlex="20" color="primary" (click)="openDialogCustomer()">New customer</button>
+    </div>
+    <div class="section" fxLayout="row">
+        <label for="userNameOrEmailAddress" fxFlex="20">Project Name*</label>
+        <div class="add-input" fxFlex="80">
+            <mat-form-field appearance="outline" class="prj-name">
+                <input matInput required minlength="4" placeholder="Project Name">
+            </mat-form-field>
+            <!-- <div *ngIf="f.userNameOrEmailAddress && (f.userNameOrEmailAddress.dirty || f.userNameOrEmailAddress.touched)"
+                        class="alert alert-danger" >
+                <div *ngIf="f.userNameOrEmailAddress.errors?.['required']">User Name or Email is required</div>
+                <div *ngIf="f.userNameOrEmailAddress.errors?.['minlength']">Must be at least 4 characters long.</div>
+            </div> -->
+        </div>
+    </div>
+    <div class="section" fxLayout="row">
+        <label for="" fxFlex="20">Project Code*</label>
+        <div class="add-input" fxFlex="80">
+            <mat-form-field appearance="outline">
+                <input matInput required minlength="4" placeholder="Project Code">
+            </mat-form-field>
+            <!-- <div *ngIf="f.userNameOrEmailAddress && (f.userNameOrEmailAddress.dirty || f.userNameOrEmailAddress.touched)"
+                        class="alert alert-danger" >
+                <div *ngIf="f.userNameOrEmailAddress.errors?.['required']">User Name or Email is required</div>
+                <div *ngIf="f.userNameOrEmailAddress.errors?.['minlength']">Must be at least 4 characters long.</div>
+            </div> -->
+        </div>
+    </div>
+    <div class="section" fxLayout="row">
+        <label for="" fxFlex="20">Date*</label>
+
+        <mat-form-field appearance="outline" class="picker-form-field" fxFlex="30">
+            <!-- <mat-label>Start at</mat-label> -->
+            <input matInput [matDatepicker]="datepicker" placeholder="Start at">
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+                <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancel</button>
+                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                </mat-datepicker-actions>
+            </mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="picker-form-field" fxFlex="30">
+            <!-- <mat-label>End at</mat-label> -->
+            <input matInput [matDatepicker]="datepicker" placeholder="End at">
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+                <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancel</button>
+                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                </mat-datepicker-actions>
+            </mat-datepicker>
+        </mat-form-field>
+
+    </div>
+
+    <div class="section" fxLayout="row">
+        <label for="" fxFlex="20">Note</label>
+        <div class="add-input" fxFlex="80">
+            <mat-form-field appearance="outline" class="prj-note">
+                <input matInput required minlength="4">
+            </mat-form-field>
+            <!-- <div *ngIf="f.userNameOrEmailAddress && (f.userNameOrEmailAddress.dirty || f.userNameOrEmailAddress.touched)"
+                        class="alert alert-danger" >
+                <div *ngIf="f.userNameOrEmailAddress.errors?.['required']">User Name or Email is required</div>
+                <div *ngIf="f.userNameOrEmailAddress.errors?.['minlength']">Must be at least 4 characters long.</div>
+            </div> -->
+        </div>
+    </div>
+    <div class="section" fxLayout="row">
+        <label fxFlex="20">All User</label>
+        <mat-checkbox class="example-margin" fxFlex="80">Auto add user as a member of this project when creating new
+            user</mat-checkbox>
+    </div>
+    <div class="section" fxLayout="row">
+        <label for="" fxFlex="20">Project Type*</label>
+        <div class="add-input" fxFlex="80">
+            <mat-radio-group aria-label="Select an option" fxLayout="row">
+                <mat-radio-button mat-stroked-button value="1" fxFlex="25" checked="true">Time & Materials
+                </mat-radio-button>
+                <mat-radio-button mat-stroked-button value="2" fxFlex="25">Fixed Fee </mat-radio-button>
+                <mat-radio-button mat-stroked-button value="3" fxFlex="25">Non-Billable </mat-radio-button>
+                <mat-radio-button mat-stroked-button value="4" fxFlex="25">ODC</mat-radio-button>
+            </mat-radio-group>
+            <!-- <div *ngIf="f.userNameOrEmailAddress && (f.userNameOrEmailAddress.dirty || f.userNameOrEmailAddress.touched)"
+                        class="alert alert-danger" >
+                <div *ngIf="f.userNameOrEmailAddress.errors?.['required']">User Name or Email is required</div>
+                <div *ngIf="f.userNameOrEmailAddress.errors?.['minlength']">Must be at least 4 characters long.</div>
+            </div> -->
+        </div>
+    </div>
+    <!-- <div *ngIf="f.password && (f.password.dirty || f.password.touched)"
+    class="alert alert-danger">
+        <div *ngIf="f.password.errors?.['required']">Password is required</div>
+        <div *ngIf="f.password.errors?.['minlength']">must be at least 4 characters long.</div>
+    </div> -->
+    <!-- <button mat-raised-button color="primary" type="submit" >Login</button> -->
+</form>

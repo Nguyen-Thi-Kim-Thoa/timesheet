@@ -1,0 +1,37 @@
+<div class="table-customer">
+    <mat-table [dataSource]="this.customer.projectslist" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+            <mat-header-cell class="table-th" mat-header-cell *matHeaderCellDef> {{this.customer.customerName}}
+            </mat-header-cell>
+            <mat-cell mat-cell class="project-items" *matCellDef="let project">
+                <div class="data">
+                    <span class="prj-name">{{project.name}}</span>
+                    <span class="prj-pms"><span *ngFor="let item of project.pms; let i = index">{{item}} </span></span>
+                    <span class="prj-member">{{project.activeMember}} members</span>
+                    <span class="prj-type"> {{project.projectType}} </span>
+                    <span class="prj-date">
+                        {{project.timeStart|date:'dd-MM-yyyy'}}-{{project.timeEnd|date:'dd-MM-yyyy'}}</span>
+                </div>
+                <div>
+                    <span class="prj-active" *ngIf="active(project.status)"> Active </span>
+                    <span class="prj-deactive" *ngIf="!active(project.status)"> Inactive </span>
+
+                    <mat-form-field appearance="outline" class="table-select">
+                        <mat-label>Action</mat-label>
+                        <mat-select>
+                            <mat-option value="edit">Edit</mat-option>
+                            <mat-option value="view">View</mat-option>
+                            <mat-option value="action">Active</mat-option>
+                            <mat-option value="delete">Delete</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+        <mat-row matRipple *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+</div>

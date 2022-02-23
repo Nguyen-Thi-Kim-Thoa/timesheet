@@ -1,0 +1,29 @@
+<div class="project-main">
+    <div class="project-header">
+        <h2>Manager Project</h2>
+    </div>
+    <div class="project-body">
+        <div class="section">
+            <button mat-raised-button color="primary"  (click)="openDialog()">
+                <mat-icon>add</mat-icon>
+                <span>New Project</span>
+            </button>
+            <mat-form-field appearance="outline">
+                <mat-label>Select an option</mat-label>
+                <mat-select [(ngModel)]="this.selected" #item (ngModelChange)="onclick(this.selected)">
+                    <mat-option [value]="options[0].value" selected>All Projects</mat-option>
+                    <mat-option [value]="options[1].value">Active Projects</mat-option>
+                    <mat-option [value]="options[2].value">Deactive Projects</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="search">
+                <mat-icon>search</mat-icon>
+                <input matInput type="search">
+                <mat-label>Search by client or project name</mat-label>
+            </mat-form-field>
+        </div>
+        <div class="main-table">
+            <app-table-customer *ngFor="let item of customer" [customer]="item"></app-table-customer>
+        </div>
+    </div>
+</div>

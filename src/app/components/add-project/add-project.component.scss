@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+@import '../../app.component.scss';
+
+   
+    .container{
+    @include flex(flex, column , center ,center );
+    min-width: 1000px;
+    min-height: max-content;
+    h3{
+        font-size:36px;
+        margin-top:2%;
+        margin-bottom: 2%;
+    }
+    .mat-typography{
+        width: 100%;
+            
+               
+                 
+                    
+        }
+
+        
+        
+
+}

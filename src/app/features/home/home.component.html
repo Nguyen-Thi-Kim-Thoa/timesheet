@@ -1,0 +1,10 @@
+<app-header></app-header>
+<mat-sidenav-container  class="example-container">
+  <mat-sidenav mode="side" opened  class="side">  
+      <app-left-toolbar></app-left-toolbar>
+  </mat-sidenav>
+  <mat-sidenav-content class="view">
+    <app-projects></app-projects>
+    <button (click)="Logout()">logout</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

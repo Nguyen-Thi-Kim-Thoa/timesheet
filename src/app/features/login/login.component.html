@@ -1,0 +1,31 @@
+<div class="container">
+    <h3>LOGIN</h3>
+    <form class="login-form" [formGroup]="loginForm" (submit)=" onSubmit()">
+        <mat-form-field appearance="outline">
+                <mat-label>User name</mat-label>
+                <input matInput required minlength="4"  placeholder="User name" formControlName="userNameOrEmailAddress"  [ngClass]="{ 'is-invalid': submitted && f.userNameOrEmailAddress.errors }">
+                <div *ngIf="submitted && f.userNameOrEmailAddress.errors" class="invalid-feedback">
+                  <div *ngIf="f.userNameOrEmailAddress.errors?.['required']">User Name or Email is required</div>
+                  <div *ngIf="f.userNameOrEmailAddress.errors?.['minlength']">Name must be at least 4 characters long.</div>
+                </div>
+        </mat-form-field>
+        <div *ngIf="f.userNameOrEmailAddress && (f.userNameOrEmailAddress.dirty || f.userNameOrEmailAddress.touched)"
+        class="alert alert-danger" >
+            <div *ngIf="f.userNameOrEmailAddress.errors?.['required']">User Name or Email is required</div>
+            <div *ngIf="f.userNameOrEmailAddress.errors?.['minlength']">Must be at least 4 characters long.</div>
+        </div>
+        <mat-form-field appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input matInput required  [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+        </mat-form-field> 
+        <div *ngIf="f.password && (f.password.dirty || f.password.touched)"
+        class="alert alert-danger">
+            <div *ngIf="f.password.errors?.['required']">Password is required</div>
+            <div *ngIf="f.password.errors?.['minlength']">must be at least 4 characters long.</div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" >Login</button>
+    </form>
+</div>

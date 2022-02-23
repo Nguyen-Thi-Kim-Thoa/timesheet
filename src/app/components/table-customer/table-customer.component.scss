@@ -1,0 +1,93 @@
+@import '../../app.component.scss';
+.table-customer{
+    @include flex(flex, 0 , center ,center );
+    padding: 3%;
+    .table-th{
+        background-color: #9999;
+        font-size: 20px;
+    }
+    .mat-elevation-z8{
+        width: 100%;
+        .project-items{
+            @include flex(flex, row , center , space-between );
+                .table-select{
+                    max-width: 120px ;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+                }
+                .prj-name{
+                    border:none;
+                    font-size: 14px;
+                }
+                .prj-pms{
+                    border:none;
+                    background-color: blue;
+                    font-size: 12px;
+                    color: #ffff;
+                    border-radius: 12px;
+                    padding: 2px 4px;
+                    font-weight: 500;
+                    margin-left: 5px;
+                }
+                .prj-member{
+                    border:none;
+                    background-color: red;
+                    font-size: 12px;
+                    color: #ffff;
+                    border-radius: 12px;
+                    padding: 2px 4px;
+                    font-weight: 500 ;
+                    margin-left: 5px;
+                }
+                .prj-type{
+                    border:none;
+                    background-color: rgba(230, 189, 10, 0.795);
+                    font-size: 12px;
+                    color: #ffff;
+                    border-radius: 12px;
+                    padding: 2px 4px;
+                    font-weight: 500 ;
+                    margin-left: 5px;
+                }
+                .prj-date{
+                    border:none;
+                    background-color: rgb(15, 173, 10);
+                    font-size: 12px;
+                    color: #ffff;
+                    border-radius: 12px;
+                    padding: 2px 4px;
+                    font-weight: 500;
+                    margin-left: 5px;
+                }
+            
+                .prj-active{
+                    border:none;
+                    background-color: rgb(9, 168, 3);
+                    font-size: 12px;
+                    color: #ffff;
+                    border-radius: 2px;
+                    padding: 2px 4px;
+                    font-weight: 500;
+                    margin-right: 5px;
+                }
+                .prj-deactive{
+                    border:none;
+                    background-color: rgb(162, 172, 161);
+                    font-size: 12px;
+                    color: #ffff;
+                    border-radius: 2px;
+                    padding: 2px 4px;
+                    font-weight: 500;
+                    margin-right: 5px;
+                }
+        }
+    }
+}
+
+::ng-deep .mat-form-field-wrapper{
+    padding-bottom: 0em;
+    //max-width: 120px;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin:0px;
+}

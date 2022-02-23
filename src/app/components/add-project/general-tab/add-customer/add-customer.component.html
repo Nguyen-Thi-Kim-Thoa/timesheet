@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>Create Customer</h2>
+<mat-dialog-content class="mat-typography">
+    <form action="" class="add-form" [formGroup]="addCustomerForm" (submit)="onSubmit()">
+        <div class="section" fxLayout="row">
+            <label fxFlex="40">Customer Name*</label>
+            <div class="add-input" fxFlex="60">
+                <mat-form-field appearance="outline">
+                    <input matInput required placeholder="Customer Name" formControlName="name"
+                        [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                </mat-form-field>
+                <div *ngIf="f.name && (f.name.dirty || f.name.touched)" class="alert alert-danger">
+                    <div *ngIf="f.name.errors?.['required']">User Name or Email is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="section" fxLayout="row">
+            <label fxFlex="40">Address*</label>
+            <div class="add-input" fxFlex="60">
+                <mat-form-field appearance="outline">
+                    <input matInput required placeholder="Address" formControlName="address"
+                        [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+                </mat-form-field>
+                <div *ngIf="f.address && (f.address.dirty || f.address.touched)" class="alert alert-danger">
+                    <div *ngIf="f.address.errors?.['required']">Customer ID is required</div>
+                </div>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions fxLayout="row">
+    <button mat-button mat-dialog-close fxFlex>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" type="submit" fxFlex>Create</button>
+</mat-dialog-actions>
